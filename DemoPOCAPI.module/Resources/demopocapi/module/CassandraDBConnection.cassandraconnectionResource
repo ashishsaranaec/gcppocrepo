@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cassandra="http://ns.tibco.com/bw/sharedresource/cassandra" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_qotxkc7DEeiqXI_CjmkAKQ" name="demopocapi.module.CassandraDBConnection" type="cassandra:CassandraConnection">
+  <jndi:configuration xsi:type="cassandra:CassandraConnection" xmi:id="_qotxks7DEeiqXI_CjmkAKQ" KeySpace="movies_keyspace" Nodes="localhost:9042" FetchSize="5000" ConnectionTimeout="5000" ReadTimeout="12000" RetryPolicy="DefaultRetryPolicy" LoadBalancingPolicy="RoundRobinPolicy"/>
+</jndi:namedResource>

@@ -1,0 +1,7 @@
+{
+    "records": [],
+    "resources": [{
+        "location": "Service Descriptors/demopocapi.module.moviesinfo-moviesinfo.json",
+        "type": "generated"
+    }]
+}

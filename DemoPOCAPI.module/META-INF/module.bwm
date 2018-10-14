@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_jdAOQM7CEeiqXI_CjmkAKQ" targetNamespace="http://tns.tibco.com/bw/composite/DemoPOCAPI.module" name="DemoPOCAPI.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_8c0h0M7CEeiqXI_CjmkAKQ" name="moviesinfo" promote="Componentmoviesinfo/moviesinfo">
+    <sca:interface.wsdl xmi:id="_8c2-EM7CEeiqXI_CjmkAKQ" interface="http://xmlns.example.com/20181013083530PLT#wsdl.interface(moviesinfo)" scaext:wsdlLocation="../Processes/demopocapi/module/moviesinfo.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_8c5aUM7CEeiqXI_CjmkAKQ" name="RestService" path="/moviesinfo" docBasePath="http://localhost:7777/DemoPOCAPI.module" docResourcePath="moviesinfo" basePath="/" connector="demopocapi.module.moviesinfo" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/demopocapi.module.moviesinfo-moviesinfo.json">
+      <operation xmi:id="_8c6ocM7CEeiqXI_CjmkAKQ" operationName="post" nickname="post-moviesinfo" httpMethod="POST" responseStyle="element" requestStyle="element">
+        <responseStatus xmi:id="_yd6r4M7GEeiqXI_CjmkAKQ" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_qbqQMM7HEeiqXI_CjmkAKQ" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_uT67MM7HEeiqXI_CjmkAKQ" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_ukP2MM7HEeiqXI_CjmkAKQ" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_8c6occ7CEeiqXI_CjmkAKQ" operationName="get" nickname="get-moviesinfo" httpMethod="GET" responseStyle="element" requestStyle="element">
+        <responseStatus xmi:id="_z3K90M7GEeiqXI_CjmkAKQ" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_8depIM7CEeiqXI_CjmkAKQ"/>
+      <advancedConfig xmi:id="_8c5aUc7CEeiqXI_CjmkAKQ" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_8c6ocs7CEeiqXI_CjmkAKQ" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_joMxoM7CEeiqXI_CjmkAKQ" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_joV7kM7CEeiqXI_CjmkAKQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_joYX0M7CEeiqXI_CjmkAKQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_joa0EM7CEeiqXI_CjmkAKQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_jodQUM7CEeiqXI_CjmkAKQ" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_jofFgM7CEeiqXI_CjmkAKQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_jog6sM7CEeiqXI_CjmkAKQ" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_joiI0M7CEeiqXI_CjmkAKQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_joj-AM7CEeiqXI_CjmkAKQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_8czTsM7CEeiqXI_CjmkAKQ" name="Componentmoviesinfo" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_8czTsc7CEeiqXI_CjmkAKQ" processName="demopocapi.module.moviesinfo"/>
+    <sca:service xmi:id="_8cz6wM7CEeiqXI_CjmkAKQ" name="moviesinfo">
+      <sca:interface.wsdl xmi:id="_8cz6wc7CEeiqXI_CjmkAKQ" interface="http://xmlns.example.com/20181013083530PLT#wsdl.interface(moviesinfo)" scaext:wsdlLocation="../Processes/demopocapi/module/moviesinfo.bwp"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

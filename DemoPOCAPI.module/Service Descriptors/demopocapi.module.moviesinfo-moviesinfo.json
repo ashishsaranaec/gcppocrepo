@@ -1,0 +1,83 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Summary about the new REST service.",
+    "description" : "Summary about the new REST service."
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/moviesinfo" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "post-moviesinfo",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Movies"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Movies to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Movies"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "get-moviesinfo",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a Movies to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Movies"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Movie" : {
+      "type" : "object",
+      "properties" : {
+        "title" : {
+          "type" : "string"
+        },
+        "year" : {
+          "type" : "integer"
+        },
+        "description" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Movies" : {
+      "type" : "object",
+      "properties" : {
+        "Movie" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Movie",
+            "uniqueItems" : false
+          }
+        }
+      }
+    }
+  }
+}

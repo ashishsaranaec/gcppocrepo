@@ -1,0 +1,5 @@
+{"records": [{
+    "jsonSchemaLocation": "/DemoPOCAPI.module/Service Descriptors/demopocapi.module.moviesinfo-moviesinfo.json",
+    "conversionType": "linked",
+    "xsdSchemaTargetNamespace": "http://www.example.org/Movies"
+}]}

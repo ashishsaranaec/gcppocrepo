@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_vWmxgCi9EeejVqXAsnvK_g" targetNamespace="http://tns.tibco.com/bw/composite/helloWorld.module" name="helloWorld.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_8dyKkNgXEeiRVsBAy_ekog" name="helloworldtest" promote="Componenthelloworldtest/helloworldtest">
+    <sca:interface.wsdl xmi:id="_8eRSwNgXEeiRVsBAy_ekog" interface="http://xmlns.example.com/20181025053638PLT#wsdl.interface(helloworldtest)" scaext:wsdlLocation="../Processes/helloworld/module/helloworldtest.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_8eYngNgXEeiRVsBAy_ekog" name="RestService1" path="/*" docBasePath="http://localhost:7777/helloWorld.module" docResourcePath="helloworldtest" basePath="/" connector="helloworld.module.HelloWorld" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/helloworld.module.helloworldtest-helloworldtest.json">
+      <operation xmi:id="_8ebDwNgXEeiRVsBAy_ekog" operationName="get" nickname="get-helloworldtest" httpMethod="GET" responseStyle="element">
+        <responseStatus xmi:id="_OaK3oNgYEeiRVsBAy_ekog" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_8eiYgNgXEeiRVsBAy_ekog"/>
+      <advancedConfig xmi:id="_8eYngdgXEeiRVsBAy_ekog" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_8ebDwdgXEeiRVsBAy_ekog" bindingName="RestService1"/>
+  </sca:service>
+  <sca:property xmi:id="_wPKKICi9EeejVqXAsnvK_g" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_wPgIYCi9EeejVqXAsnvK_g" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_wPm2ECi9EeejVqXAsnvK_g" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_wPsVoCi9EeejVqXAsnvK_g" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_wPzDUCi9EeejVqXAsnvK_g" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_wP370Ci9EeejVqXAsnvK_g" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:property xmi:id="_wP80UCi9EeejVqXAsnvK_g" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ldxgsNgZEeiRVsBAy_ekog" name="HTTPHost" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_wX5E4NgZEeiRVsBAy_ekog" name="HTTPPort" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_8da-MNgXEeiRVsBAy_ekog" name="Componenthelloworldtest" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_8da-MdgXEeiRVsBAy_ekog" processName="helloworld.module.helloworldtest"/>
+    <sca:service xmi:id="_8di6ANgXEeiRVsBAy_ekog" name="helloworldtest">
+      <sca:interface.wsdl xmi:id="_8dugMNgXEeiRVsBAy_ekog" interface="http://xmlns.example.com/20181025053638PLT#wsdl.interface(helloworldtest)" scaext:wsdlLocation="../Processes/helloworld/module/helloworldtest.bwp"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

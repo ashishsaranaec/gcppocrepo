@@ -1,0 +1,132 @@
+{
+  "apiVersion" : "v1",
+  "kind" : "List",
+  "items" : [ {
+    "apiVersion" : "v1",
+    "kind" : "Service",
+    "metadata" : {
+      "labels" : {
+        "container" : "bwce-sample",
+        "provider" : "fabric8",
+        "project" : "bwce-sample",
+        "group" : "com.tibco.bw",
+        "expose" : "true",
+        "app" : "helloWorld",
+        "version" : "1.0.0-SNAPSHOT"
+      },
+      "name" : "bwce-sample-service",
+      "namespace" : "default"
+    },
+    "spec" : {
+      "ports" : [ {
+        "port" : 80,
+        "protocol" : "TCP",
+        "targetPort" : 8080
+      } ],
+      "selector" : {
+        "container" : "bwce-sample",
+        "provider" : "fabric8",
+        "project" : "bwce-sample",
+        "group" : "com.tibco.bw",
+        "app" : "helloWorld"
+      },
+      "type" : "LoadBalancer"
+    }
+  }, {
+    "apiVersion" : "apps.openshift.io/v1",
+    "kind" : "DeploymentConfig",
+    "metadata" : {
+      "annotations" : {
+        "fabric8.io/metrics-path" : "dashboard/file/kubernetes-pods.json/?var-project=helloWorld&var-version=1.0.0-SNAPSHOT"
+      },
+      "labels" : {
+        "app" : "helloWorld",
+        "provider" : "fabric8",
+        "version" : "1.0.0-SNAPSHOT",
+        "group" : "com.tibco.bw"
+      },
+      "name" : "bwce-sample"
+    },
+    "spec" : {
+      "replicas" : 1,
+      "revisionHistoryLimit" : 2,
+      "selector" : {
+        "app" : "helloWorld",
+        "provider" : "fabric8",
+        "group" : "com.tibco.bw"
+      },
+      "strategy" : {
+        "rollingParams" : {
+          "timeoutSeconds" : 3600
+        },
+        "type" : "Rolling"
+      },
+      "template" : {
+        "metadata" : {
+          "annotations" : {
+            "fabric8.io/metrics-path" : "dashboard/file/kubernetes-pods.json/?var-project=helloWorld&var-version=1.0.0-SNAPSHOT"
+          },
+          "labels" : {
+            "container" : "bwce-sample",
+            "project" : "bwce-sample",
+            "app" : "helloWorld",
+            "provider" : "fabric8",
+            "version" : "1.0.0-SNAPSHOT",
+            "group" : "com.tibco.bw"
+          },
+          "name" : "bwce-sample",
+          "namespace" : "default"
+        },
+        "spec" : {
+          "containers" : [ {
+            "env" : [ {
+              "name" : "APP_CONFIG_PROFILE",
+              "value" : "docker"
+            }, {
+              "name" : "BW_LOGLEVEL",
+              "value" : "DEBUG"
+            }, {
+              "name" : "BW_PROFILE",
+              "value" : "docker"
+            } ],
+            "image" : "gcr.io/gcpbwcepoc/hello-world-rest-api:v1",
+            "imagePullPolicy" : "Always",
+            "name" : "bwce-sample",
+            "ports" : [ {
+              "containerPort" : 8080,
+              "name" : "http"
+            } ]
+          } ]
+        }
+      },
+      "triggers" : [ {
+        "type" : "ConfigChange"
+      } ]
+    }
+  }, {
+    "apiVersion" : "route.openshift.io/v1",
+    "kind" : "Route",
+    "metadata" : {
+      "labels" : {
+        "container" : "bwce-sample",
+        "provider" : "fabric8",
+        "project" : "bwce-sample",
+        "group" : "com.tibco.bw",
+        "expose" : "true",
+        "app" : "helloWorld",
+        "version" : "1.0.0-SNAPSHOT"
+      },
+      "name" : "bwce-sample-service",
+      "namespace" : "default"
+    },
+    "spec" : {
+      "port" : {
+        "targetPort" : 8080
+      },
+      "to" : {
+        "kind" : "Service",
+        "name" : "bwce-sample-service"
+      }
+    }
+  } ]
+}

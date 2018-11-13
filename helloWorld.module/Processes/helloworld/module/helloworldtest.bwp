@@ -519,11 +519,15 @@
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
                                     <styles xsi:type="bwnotation:BackgroundStyle"/>
-                                    <styles xsi:type="bwnotation:ResizingStyle"/>
+                                    <styles
+                                    restoreHeight="142"
+                                    restoreWidth="486"
+                                    restoreX="2" xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0"/>
                                     <layoutConstraint
-                                    height="140"
-                                    width="485" xsi:type="notation:Bounds"/>
+                                    height="142"
+                                    width="486"
+                                    x="2" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -535,9 +539,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
-                                    height="172" width="561"
-                                    x="20"
-                                    xsi:type="notation:Bounds" y="20"/>
+                                    height="172" width="561" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -551,9 +553,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="108"
-                                    width="400" x="2"
-                                    xsi:type="notation:Bounds" y="2"/>
+                                    <layoutConstraint height="384"
+                                    width="515" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -600,6 +601,9 @@
             name="_processContext" sca-bpel:internal="true"/>
         <bpws:variable messageType="ns:getRequest" name="get" sca-bpel:internal="true"/>
         <bpws:variable messageType="ns:getResponse" name="getOut-input" sca-bpel:internal="true"/>
+        <bpws:variable name="Message" sca-bpel:hotUpdate="false"
+            sca-bpel:privateProperty="true" sca-bpel:property="yes"
+            tibex:propertySource="Message" type="xsd:string"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -630,10 +634,10 @@
                                 tibex:xpdlId="ef4d62cc-dd62-4c0e-8237-167b1bfdc579" variable="getOut-input">
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20181025053638PLT&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;getOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;item>&#xa;            &lt;xsl:value-of select=&quot;&amp;quot;Hello World From TIBCO BWCE app docker image in kubernetes cluster&amp;quot;&quot;/>&#xa;        &lt;/item>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20181025053638PLT&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;Message&quot;/>&#xa;    &lt;xsl:template name=&quot;getOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;item>&#xa;            &lt;xsl:value-of select=&quot;$Message&quot;/>&#xa;        &lt;/item>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns="http://xmlns.example.com/20181025053638PLT" version="2.0"&gt;&lt;xsl:template name="getOut-input" match="/"&gt;&lt;tns:getResponse&gt;&lt;item&gt;&lt;xsl:value-of select="&amp;quot;Hello World From TIBCO BWCE app docker image in kubernetes cluster&amp;quot;"/&gt;&lt;/item&gt;&lt;/tns:getResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns="http://xmlns.example.com/20181025053638PLT" version="2.0"&gt;&lt;xsl:param name="Message"/&gt;&lt;xsl:template name="getOut-input" match="/"&gt;&lt;tns:getResponse&gt;&lt;item&gt;&lt;xsl:value-of select="$Message"/&gt;&lt;/item&gt;&lt;/tns:getResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                             </bpws:reply>
                         </bpws:flow>
                     </bpws:scope>

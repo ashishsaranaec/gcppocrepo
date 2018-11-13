@@ -22,6 +22,7 @@
   <sca:property xmi:id="_wP80UCi9EeejVqXAsnvK_g" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_ldxgsNgZEeiRVsBAy_ekog" name="HTTPHost" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_wX5E4NgZEeiRVsBAy_ekog" name="HTTPPort" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_GCspkOdyEeiHJIunQJN83g" name="Message" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_8da-MNgXEeiRVsBAy_ekog" name="Componenthelloworldtest" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_8da-MdgXEeiRVsBAy_ekog" processName="helloworld.module.helloworldtest"/>
     <sca:service xmi:id="_8di6ANgXEeiRVsBAy_ekog" name="helloworldtest">

@@ -2,7 +2,7 @@
 <repository xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns = "http://www.tibco.com/xmlns/repo/types/2002">
 	<globalVariables>
 		<globalVariable>
-			<name>BW.APPNODE.NAME</name>
+			<name>//helloWorld.module//BW.APPNODE.NAME</name>
 			<value></value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -10,7 +10,7 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>BW.DEPLOYMENTUNIT.NAME</name>
+			<name>//helloWorld.module//BW.DEPLOYMENTUNIT.NAME</name>
 			<value></value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -18,7 +18,7 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>BW.HOST.NAME</name>
+			<name>//helloWorld.module//BW.HOST.NAME</name>
 			<value>localhost</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -26,7 +26,7 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>BW.DEPLOYMENTUNIT.VERSION</name>
+			<name>//helloWorld.module//BW.DEPLOYMENTUNIT.VERSION</name>
 			<value></value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -34,7 +34,7 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>BW.MODULE.VERSION</name>
+			<name>//helloWorld.module//BW.MODULE.VERSION</name>
 			<value></value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -42,7 +42,7 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>BW.CLOUD.PORT</name>
+			<name>//helloWorld.module//BW.CLOUD.PORT</name>
 			<value>8080</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -50,7 +50,7 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>BW.MODULE.NAME</name>
+			<name>//helloWorld.module//BW.MODULE.NAME</name>
 			<value></value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -58,7 +58,7 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>HTTPHost</name>
+			<name>//helloWorld.module//HTTPHost</name>
 			<value>0.0.0.0</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -66,7 +66,7 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>HTTPPort</name>
+			<name>//helloWorld.module//HTTPPort</name>
 			<value>8080</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -74,12 +74,12 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>Message</name>
-			<value>Hello from BWCE</value>
+			<name>//helloWorld.module//Message</name>
+			<value>Hello from BWCE in QA Env</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 	</globalVariables>
 </repository>

@@ -75,7 +75,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//helloWorld.module//Message</name>
-			<value>#MSG#</value>
+			<value>Hello from Docker Env</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
